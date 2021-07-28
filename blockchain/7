@@ -1,0 +1,10 @@
+{
+    "borrower": "Daniel",
+    "lender": "Benito",
+    "amount": "5000",
+    "prev_block": {
+        "hash": "01d3b061be0392f57ca76bd053f2c7200c6962a8767a86bdc1c3b54781ec2177",
+        "nonceblock": 2,
+        "filename": "6"
+    }
+}

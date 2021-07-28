@@ -5,10 +5,12 @@ import hashlib
 BLOCKCHAIN_DIR = 'blockchain/'
 
 
-def get_hash(prev_block):
-    with open('blockchain/' + prev_block, 'rb') as f:
+def get_hash(prev_block,nonce):
+
+    with open(BLOCKCHAIN_DIR + prev_block, 'rb') as f:
         content = f.read()
-    return hashlib.md5(content).hexdigest()
+        content += str(nonce).encode('utf-8')
+    return hashlib.sha256(content).hexdigest()
 
 def check_integrity():
     files = sorted(os.listdir(BLOCKCHAIN_DIR), key=lambda x: int(x))
@@ -21,7 +23,8 @@ def check_integrity():
         
         prev_hash = block.get('prev_block').get('hash')
         prev_filename= block.get('prev_block').get('filename')
-        actual_hash = get_hash(prev_filename)
+        prev_nonce = block.get('prev_block').get('nonceblock')
+        actual_hash = get_hash(prev_filename, prev_nonce)
 
         if prev_hash == actual_hash:
             res = 'Ok'
@@ -34,16 +37,17 @@ def check_integrity():
 
 
 def write_block(borrower, lender, amount):
-    
+
     blocks_count = len(os.listdir(BLOCKCHAIN_DIR))
     prev_block = str(blocks_count)
-    
+    mine_result, nonce_value = mine(prev_block)
     data =  {
         "borrower": borrower,
         "lender": lender,
         "amount": amount,
         "prev_block": {
-            "hash": get_hash(prev_block),
+            "hash": mine_result,
+            "nonceblock": nonce_value,
             "filename": prev_block
         }
     }
@@ -54,11 +58,19 @@ def write_block(borrower, lender, amount):
         json.dump(data, f, indent=4, ensure_ascii=False)
         f.write('\n')
 
+def mine(prev_block):
+    nonce=0
+    diff= int(prev_block)
+    maxNonce = 2**32
+    target = 2 ** (256-diff)
+    for n in range(maxNonce):
+        x = get_hash(prev_block,nonce)
+        print("Mining... please wait nonce: ", n)
+        #print("Current hash: ", x)
+        if int(x, 16) <= target:
+            print("Mining successful")
 
-def main():
-    #write_block(borrower='Andrew', lender='Kate', amount=100)
-    check_integrity()
+            return x, nonce
+        else:
+            nonce += 1
 
-
-if __name__ == '__main__':
-    main()

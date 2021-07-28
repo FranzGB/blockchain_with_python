@@ -1,0 +1,10 @@
+{
+    "borrower": "Oscar",
+    "lender": "Franz",
+    "amount": "10",
+    "prev_block": {
+        "hash": "001b55233e51644c0c7960d81be7f593673441c005077a2336da927483a91854",
+        "nonceblock": 1821,
+        "filename": "10"
+    }
+}

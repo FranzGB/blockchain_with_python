@@ -1,9 +1,10 @@
 {
-    "borrower": "Stadyn",
-    "lender": "Julio",
-    "amount": "100",
-    "prev_block": {
-        "hash": "d41d8cd98f00b204e9800998ecf9945c",
-        "filename": "0"
+        "borrower": borrower,
+        "lender": lender,
+        "amount": amount,
+        "prev_block": {
+            "hash": "",
+            "nonceblock": 0,
+            "filename": 0
+        }
     }
-}

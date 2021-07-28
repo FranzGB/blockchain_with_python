@@ -1,0 +1,10 @@
+{
+    "borrower": "Stadyn",
+    "lender": "Lucho",
+    "amount": "500",
+    "prev_block": {
+        "hash": "799cc8ab33349e982fbc80b921c164501100197e784928e696cc64aed30685fd",
+        "nonceblock": 0,
+        "filename": "3"
+    }
+}

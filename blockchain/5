@@ -1,0 +1,10 @@
+{
+    "borrower": "Pedro",
+    "lender": "Picapiedra",
+    "amount": "40",
+    "prev_block": {
+        "hash": "f32e34440d5548bd6ab6def2be98d6e5af5ce3d58bfd6b7d020f47f24ac03edb",
+        "nonceblock": 0,
+        "filename": "4"
+    }
+}

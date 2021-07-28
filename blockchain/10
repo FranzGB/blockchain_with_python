@@ -1,0 +1,10 @@
+{
+    "borrower": "Profesor",
+    "lender": "Estudiante",
+    "amount": "10",
+    "prev_block": {
+        "hash": "0033a90fca4e6882b1bab2249d9ef5116d5c4ebdccdfdbf10df2dd045707a122",
+        "nonceblock": 812,
+        "filename": "9"
+    }
+}

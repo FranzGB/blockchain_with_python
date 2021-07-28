@@ -1,0 +1,10 @@
+{
+    "borrower": "Estudiante",
+    "lender": "Oscar",
+    "amount": "4",
+    "prev_block": {
+        "hash": "003ccec595c891d9b9d90e716b3eea8cd6b681f480f8d9d1efe68e78d4a3209b",
+        "nonceblock": 13,
+        "filename": "8"
+    }
+}
